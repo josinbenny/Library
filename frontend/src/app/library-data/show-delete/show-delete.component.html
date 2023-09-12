@@ -1,0 +1,52 @@
+
+<!-- Button trigger modal -->
+<br>
+<div style="text-align: center;">
+<button type="button" (click)="addclick()" class="btn btn-outline-primary" data-bs-toggle="modal" 
+data-bs-target="#exampleModal"  data-backdrop="static" data-keyboard="false">
+    Add New Book
+  </button>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{Modal_title}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()"></button>
+        </div>
+        <div class="modal-body">
+            <app-add-edit [libb]="libb" *ngIf="Activate_add_edit"></app-add-edit>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<br><br><br>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Book Id</th>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Book Price</th>
+            <th>Options</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of Librarylist">
+            <td>{{d.Book_id}}</td>
+            <td>{{d.Book_Name}}</td>
+            <td>{{d.Book_author}}</td>
+            <td>{{d.Book_price}}</td>
+            <td><button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-backdrop="static" data-keyboard="false" (click)="editclick(d)">Edit</button></td>
+            <td>
+                <button class="btn btn-outline-danger" (click)="deleteData(d)">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+  </table>

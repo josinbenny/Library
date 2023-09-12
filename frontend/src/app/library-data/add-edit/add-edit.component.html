@@ -1,0 +1,13 @@
+<div class="form-group row">
+    <div>
+        <input class="form-control" type="text" placeholder="Name of Book" aria-label="default input example" [(ngModel)]="Book_Name"><br>
+        <input class="form-control" type="text" placeholder="Name of Author" aria-label="default input example" [(ngModel)]="Book_author"><br>
+        <input class="form-control" type="text" placeholder="Price" aria-label="default input example" [(ngModel)]="Book_price"><br>
+        
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-outline-success" (click)="savebook()" *ngIf="libb.Book_id==0">Save</button>
+    <button class="btn btn-outline-success" (click)="updatebook()" *ngIf="libb.Book_id!=0">Update</button>
+  </div>
+
