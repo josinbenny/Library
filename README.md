@@ -6,4 +6,4 @@ To run this backend django project open the project in pycharm, then create and 
 
 Then open frontend app in VS code and open cmd prompt and run the project using command "ng serve". Click on the link then we can access the website
 
-Thank you so much for your time.
+Please find the projects in the master branch
